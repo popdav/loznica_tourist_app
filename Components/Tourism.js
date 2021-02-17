@@ -126,53 +126,53 @@ class Tourism extends React.Component {
               navigation={this.props.navigation}
               bgColor="#62ab43"
               icon={faStar}
-              text="Attractions"
+              text="Loznica"
             />
 
             <ButtonGoTo
               navigation={this.props.navigation}
               bgColor="#008972"
               icon={faBed}
-              text="Hotels"
+              text="Krupanj"
             />
 
             <ButtonGoTo
               navigation={this.props.navigation}
               bgColor="#bc2b15"
               icon={faUtensils}
-              text="Restaurants"
+              text="Ljubovija"
             />
 
             <ButtonGoTo
               navigation={this.props.navigation}
               bgColor="#ef7337"
               icon={faHeart}
-              text="Feature"
+              text="Mali Zvornik"
             />
 
-            <ButtonGoTo
-              navigation={this.props.navigation}
-              bgColor="#803fc7"
-              icon={faGlassMartini}
-              text="Food Nightlife"
-            />
+            {/*<ButtonGoTo*/}
+            {/*  navigation={this.props.navigation}*/}
+            {/*  bgColor="#803fc7"*/}
+            {/*  icon={faGlassMartini}*/}
+            {/*  text="Food Nightlife"*/}
+            {/*/>*/}
 
-            <ButtonGoTo
-              navigation={this.props.navigation}
-              bgColor="#20abce"
-              icon={faTicketAlt}
-              text="Festival"
-            />
+            {/*<ButtonGoTo*/}
+            {/*  navigation={this.props.navigation}*/}
+            {/*  bgColor="#20abce"*/}
+            {/*  icon={faTicketAlt}*/}
+            {/*  text="Festival"*/}
+            {/*/>*/}
 
-            <ButtonGoTo
-              navigation={this.props.navigation}
-              bgColor="#ff3e27"
-              icon={faVideo}
-              text="Videos"
-            />
+            {/*<ButtonGoTo*/}
+            {/*  navigation={this.props.navigation}*/}
+            {/*  bgColor="#ff3e27"*/}
+            {/*  icon={faVideo}*/}
+            {/*  text="Videos"*/}
+            {/*/>*/}
           </View>
 
-          <MapScreen navigation={this.props.navigation} />
+          <MapScreen navigation={this.props.navigation} data={data} />
 
           <View
             style={{
@@ -191,23 +191,26 @@ class Tourism extends React.Component {
               justifyContent: 'center',
               alignItems: 'center',
             }}>
-            {data.map((e, i) => {
-              let img;
-              if (e.img && e.img !== '') {
-                img = e.img;
-              } else {
-                img = null;
-              }
-              return (
-                <TouristObject
-                  key={i}
-                  navigation={this.props.navigation}
-                  img={img}
-                  title={e.name}
-                  desc={e.description}
-                />
-              );
-            })}
+            <ScrollView style={{flex: 1}}>
+              {data.map((e, i) => {
+                let img;
+                if (e.img && e.img !== '') {
+                  img = e.img;
+                } else {
+                  img = null;
+                }
+                return (
+                  <TouristObject
+                    key={i}
+                    navigation={this.props.navigation}
+                    img={img}
+                    title={e.name}
+                    desc={e.description}
+                    object={e}
+                  />
+                );
+              })}
+            </ScrollView>
           </View>
         </ScrollView>
         <View
