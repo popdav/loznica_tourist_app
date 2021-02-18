@@ -7,7 +7,7 @@ import {
   View,
 } from 'react-native';
 import {Header} from 'react-native-elements';
-import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+
 import {
   faBars,
   faBed,
@@ -28,6 +28,11 @@ import krupanj from '../Data/krupanj.js';
 import ljubovija from '../Data/ljubovija';
 import loznica from '../Data/loznica';
 import mali_zvornik from '../Data/mali_zvornik';
+
+const loznica_grb = require('./Icons/loznica.png');
+const krupanj_grb = require('./Icons/krupanj.png');
+const ljubovija_grb = require('./Icons/ljubovija.png');
+const mali_zvornik_grb = require('./Icons/mali_zvornik.png');
 
 const data = krupanj.concat(ljubovija).concat(loznica).concat(mali_zvornik);
 
@@ -93,13 +98,13 @@ class Tourism extends React.Component {
         <Header
           backgroundColor="dimgray"
           placement="center"
-          leftComponent={
-            <FontAwesomeIcon style={{color: 'white'}} icon={faUser} />
-          }
-          centerComponent={{text: 'TURIZAM LOZNICA', style: {color: '#fff'}}}
-          rightComponent={
-            <FontAwesomeIcon style={{color: 'white'}} icon={faBars} />
-          }
+          // leftComponent={
+          //   <FontAwesomeIcon style={{color: 'white'}} icon={faUser} />
+          // }
+          centerComponent={{text: 'TURIZAM PODRINJE', style: {color: '#fff'}}}
+          // rightComponent={
+          //   <FontAwesomeIcon style={{color: 'white'}} icon={faBars} />
+          // }
         />
         <ScrollView style={{backgroundColor: 'white'}}>
           <View style={{marginLeft: '2%', marginRight: '2%'}}>
@@ -125,51 +130,34 @@ class Tourism extends React.Component {
             <ButtonGoTo
               navigation={this.props.navigation}
               bgColor="#62ab43"
-              icon={faStar}
+              icon={loznica_grb}
               text="Loznica"
+              number={loznica.length}
             />
 
             <ButtonGoTo
               navigation={this.props.navigation}
               bgColor="#008972"
-              icon={faBed}
+              icon={krupanj_grb}
               text="Krupanj"
+              number={krupanj.length}
             />
 
             <ButtonGoTo
               navigation={this.props.navigation}
               bgColor="#bc2b15"
-              icon={faUtensils}
+              icon={ljubovija_grb}
               text="Ljubovija"
+              number={ljubovija.length}
             />
 
             <ButtonGoTo
               navigation={this.props.navigation}
               bgColor="#ef7337"
-              icon={faHeart}
+              icon={mali_zvornik_grb}
               text="Mali Zvornik"
+              number={mali_zvornik.length}
             />
-
-            {/*<ButtonGoTo*/}
-            {/*  navigation={this.props.navigation}*/}
-            {/*  bgColor="#803fc7"*/}
-            {/*  icon={faGlassMartini}*/}
-            {/*  text="Food Nightlife"*/}
-            {/*/>*/}
-
-            {/*<ButtonGoTo*/}
-            {/*  navigation={this.props.navigation}*/}
-            {/*  bgColor="#20abce"*/}
-            {/*  icon={faTicketAlt}*/}
-            {/*  text="Festival"*/}
-            {/*/>*/}
-
-            {/*<ButtonGoTo*/}
-            {/*  navigation={this.props.navigation}*/}
-            {/*  bgColor="#ff3e27"*/}
-            {/*  icon={faVideo}*/}
-            {/*  text="Videos"*/}
-            {/*/>*/}
           </View>
 
           <MapScreen navigation={this.props.navigation} data={data} />
