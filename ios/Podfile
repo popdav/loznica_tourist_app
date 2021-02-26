@@ -8,6 +8,13 @@ target 'tourism' do
 
   use_react_native!(:path => config["reactNativePath"])
 
+  pod 'react-native-camera', :path => '../node_modules/react-native-camera'
+
+  pod 'RNImageCropPicker', :path => '../node_modules/react-native-image-crop-picker'
+
+  pod 'react-native-geolocation', :path => '../node_modules/@react-native-community/geolocation'
+
+
   target 'tourismTests' do
     inherit! :complete
     # Pods for testing

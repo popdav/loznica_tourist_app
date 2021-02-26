@@ -95,22 +95,26 @@ class Tourism extends React.Component {
           alignItems: 'center',
           backgroundColor: 'lightgrey',
         }}>
-        <Header
-          backgroundColor="dimgray"
-          placement="center"
-          // leftComponent={
-          //   <FontAwesomeIcon style={{color: 'white'}} icon={faUser} />
-          // }
-          centerComponent={{text: 'TURIZAM PODRINJE', style: {color: '#fff'}}}
-          // rightComponent={
-          //   <FontAwesomeIcon style={{color: 'white'}} icon={faBars} />
-          // }
-        />
+        {/*<Header*/}
+        {/*  backgroundColor="dimgray"*/}
+        {/*  placement="center"*/}
+        {/*  // leftComponent={*/}
+        {/*  //   <FontAwesomeIcon style={{color: 'white'}} icon={faUser} />*/}
+        {/*  // }*/}
+        {/*  centerComponent={{text: 'TURIZAM PODRINJE', style: {color: '#fff'}}}*/}
+        {/*  // rightComponent={*/}
+        {/*  //   <FontAwesomeIcon style={{color: 'white'}} icon={faBars} />*/}
+        {/*  // }*/}
+        {/*/>*/}
         <ScrollView style={{backgroundColor: 'white'}}>
           <View style={{marginLeft: '2%', marginRight: '2%'}}>
-            <Text style={{color: 'grey', marginTop: '2%', marginBottom: '2%'}}>
-              Loznica
-            </Text>
+            <Text
+              style={{
+                color: 'grey',
+                marginTop: '2%',
+                marginBottom: '2%',
+              }}
+            />
             <View
               style={{
                 borderBottomColor: 'grey',
@@ -122,6 +126,7 @@ class Tourism extends React.Component {
             style={{
               marginTop: '5%',
               marginLeft: '2%',
+              marginRight: '2%',
               flex: 1,
               flexDirection: 'column',
               justifyContent: 'center',
@@ -179,7 +184,7 @@ class Tourism extends React.Component {
               justifyContent: 'center',
               alignItems: 'center',
             }}>
-            <ScrollView style={{flex: 1}}>
+            <View style={{flex: 1}} >
               {data.map((e, i) => {
                 let img;
                 if (e.img && e.img !== '') {
@@ -198,20 +203,20 @@ class Tourism extends React.Component {
                   />
                 );
               })}
-            </ScrollView>
+            </View>
           </View>
         </ScrollView>
-        <View
-          style={{
-            height: 50,
-            width: '100%',
-            backgroundColor: 'dimgray',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}>
-          <Text style={{color: 'white'}}>FOOTER</Text>
-        </View>
+        {/*<View*/}
+        {/*  style={{*/}
+        {/*    height: 50,*/}
+        {/*    width: '100%',*/}
+        {/*    backgroundColor: 'dimgray',*/}
+        {/*    flexDirection: 'column',*/}
+        {/*    justifyContent: 'center',*/}
+        {/*    alignItems: 'center',*/}
+        {/*  }}>*/}
+        {/*  <Text style={{color: 'white'}}>FOOTER</Text>*/}
+        {/*</View>*/}
       </View>
     );
   }

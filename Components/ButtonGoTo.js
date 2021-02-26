@@ -15,8 +15,8 @@ class ButtonGoTo extends React.Component {
           flexDirection: 'row',
           marginBottom: '2%',
           backgroundColor: 'lightgrey',
-          width: '55%',
-          height: 30,
+          width: '100%',
+          height: 35,
         }}
         onPress={() =>
           this.props.navigation.navigate('Places', {
@@ -28,17 +28,7 @@ class ButtonGoTo extends React.Component {
             width: '20%',
           }}>
           <View style={{marginTop: '5%', marginLeft: '10%'}}>
-            {/*<FontAwesomeIcon*/}
-            {/*  size={26}*/}
-            {/*  style={{color: 'white'}}*/}
-            {/*  icon={this.props.icon}*/}
-            {/*/>*/}
-            {/*<Image style={{*/}
-            {/*  flex: 1,*/}
-            {/*  width: 10,*/}
-            {/*  height: 10,*/}
-            {/*  resizeMode: 'contain'*/}
-            {/*}} source={this.props.icon} />*/}
+            <Image style={{width: 25, height: 26}} source={this.props.icon} />
           </View>
         </View>
         <Text style={{marginTop: '2%', marginLeft: '5%'}}>
@@ -48,14 +38,17 @@ class ButtonGoTo extends React.Component {
         <View
           style={{
             marginTop: '3%',
-            marginLeft: '5%',
+            marginLeft: '10%',
+            textAlign: 'right',
             backgroundColor: 'grey',
             borderRadius: 10,
             width: 30,
             height: 20,
             alignItems: 'center',
           }}>
-          <Text style={{color: 'white'}}>{this.props.number}</Text>
+          <Text style={{color: 'white'}}>
+            {this.props.number}
+          </Text>
         </View>
       </TouchableOpacity>
     );

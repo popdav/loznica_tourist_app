@@ -13,7 +13,7 @@ class TouristObject extends React.Component {
   render() {
     return (
       <TouchableOpacity
-        style={this.props.style}
+        style={{width: '100%'}}
         onPress={() =>
           this.props.navigation.navigate('Hello World', {
             title: this.props.title,

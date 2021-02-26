@@ -22,45 +22,38 @@ const Food_Nightlife = require('./Icons/Food_Nightlife.png');
 const Hotel = require('./Icons/Hotels.png');
 const Restaurant = require('./Icons/Restaurants.png');
 const Pin = require('./Icons/pin.png');
-
-const churches = [
-  {
-    coordinate: {latitude: 44.532116, longitude: 19.219862},
-    img: require('./crkva1.jpg'),
-  },
-  {
-    coordinate: {latitude: 44.5348, longitude: 19.233316},
-    img: require('./crkva2.jpg'),
-  },
-];
-const restaurants = [
-  {coordinate: {latitude: 44.533442, longitude: 19.224122}},
-  {coordinate: {latitude: 44.534264, longitude: 19.228961}},
-];
+const Church = require('./Icons/Church.png');
+const Running = require('./Icons/Running.png');
+const Book = require('./Icons/Book.png');
+const Parking = require('./Icons/Parking.png');
 
 class MapScreen extends React.Component {
   constructor(props) {
     super(props);
     let data = [];
-    if (props.data){
+    if (props.data) {
       data = props.data;
     } else if (props.route.params.data) {
-      data = props.route.params.data
+      data = props.route.params.data;
     }
     this.state = {
       data: data,
       position: {
-        latitude: 44.5334,
-        longitude: 19.223848,
+        latitude: 44.4,
+        longitude: 19.5,
       },
       region: {
-        latitude: 44.5334,
-        longitude: 19.223848,
-        latitudeDelta: 0.0922,
-        longitudeDelta: 0.0421,
+        latitude: 44.4,
+        longitude: 19.5,
+        latitudeDelta: 0.8,
+        longitudeDelta: 0.1,
       },
       isChurchesSelected: true,
       isRestaurantsSelected: true,
+      isHotelsSelected: true,
+      isSportSelected: true,
+      isCultureSelected: true,
+      isParkingSelected: true,
       showCarousel: true,
       fullScreen:
         props.route === undefined ? false : props.route.params.fullScreen,
@@ -75,6 +68,44 @@ class MapScreen extends React.Component {
     this.setState({isRestaurantsSelected: !this.state.isRestaurantsSelected});
   };
 
+  hotelsSelected = () => {
+    this.setState({isHotelsSelected: !this.state.isHotelsSelected});
+  };
+
+  sportSelected = () => {
+    this.setState({isSportSelected: !this.state.isSportSelected});
+  };
+
+  cultureSelected = () => {
+    this.setState({isCultureSelected: !this.state.isCultureSelected});
+  };
+
+  parkingSelected = () => {
+    this.setState({isParkingSelected: !this.state.isParkingSelected});
+  };
+
+  returnMarker = (e, image, i) => {
+    return (
+      <Marker
+        key={i}
+        coordinate={{latitude: e.latitude, longitude: e.longitude}}
+        image={image}>
+        <Callout>
+          <View
+            style={{
+              width: 100,
+              height: 100,
+              flex: 1,
+              flexDirection: 'column',
+              justifyContent: 'center',
+            }}>
+            <Text>{e.name}</Text>
+          </View>
+        </Callout>
+      </Marker>
+    );
+  };
+
   render() {
     return (
       <View
@@ -83,65 +114,29 @@ class MapScreen extends React.Component {
         }>
         <MapView initialRegion={this.state.region} style={styles.map}>
           {this.state.data.map((e, i) => {
-            return (
-              <Marker
-                key={i}
-                coordinate={{latitude: e.latitude, longitude: e.longitude}}
-                image={Attraction}>
-                <Callout>
-                  <View
-                    style={{
-                      width: 100,
-                      height: 100,
-                      flex: 1,
-                      flexDirection: 'column',
-                      justifyContent: 'center',
-                    }}>
-                    <Text>Neki opis</Text>
-                  </View>
-                </Callout>
-              </Marker>
-            );
+            if (
+              e.type === 'Crkve i Manastiri' &&
+              this.state.isChurchesSelected
+            ) {
+              return this.returnMarker(e, Church, i);
+            } else if (
+              e.type === 'Restoran' &&
+              this.state.isRestaurantsSelected
+            ) {
+              return this.returnMarker(e, Restaurant, i);
+            } else if (e.type === 'Kultura' && this.state.isCultureSelected) {
+              return this.returnMarker(e, Book, i);
+            } else if (e.type === 'Smeštaj' && this.state.isHotelsSelected) {
+              return this.returnMarker(e, Hotel, i);
+            } else if (
+              e.type === 'Sport i rekreacija' &&
+              this.state.isSportSelected
+            ) {
+              return this.returnMarker(e, Running, i);
+            } else if (e.type === 'Parking' && this.state.isParkingSelected) {
+              return this.returnMarker(e, Parking, i);
+            }
           })}
-          {/*{this.state.isChurchesSelected*/}
-          {/*  ? churches.map((e, i) => {*/}
-          {/*      return (*/}
-          {/*        <Marker key={i} coordinate={e.coordinate} image={Attraction}>*/}
-          {/*          /!*<Image source={Attraction} style={{height: 45, width:36 }} />*!/*/}
-          {/*          <Callout>*/}
-          {/*            <View*/}
-          {/*              style={{*/}
-          {/*                width: 100,*/}
-          {/*                height: 100,*/}
-          {/*                flex: 1,*/}
-          {/*                flexDirection: 'column',*/}
-          {/*                justifyContent: 'center',*/}
-          {/*              }}>*/}
-          {/*              /!*<Text>*!/*/}
-          {/*              /!*    <Image style={styles.cardImage} source={e.img} resizeMode="cover"/>*!/*/}
-          {/*              /!*</Text>*!/*/}
-          {/*              <Text>Neki opis</Text>*/}
-          {/*            </View>*/}
-          {/*          </Callout>*/}
-          {/*        </Marker>*/}
-          {/*      );*/}
-          {/*    })*/}
-          {/*  : false}*/}
-
-          {/*{this.state.isRestaurantsSelected*/}
-          {/*  ? restaurants.map((e, i) => {*/}
-          {/*      return (*/}
-          {/*        <Marker*/}
-          {/*          key={i}*/}
-          {/*          coordinate={e.coordinate}*/}
-          {/*          title={'Neki restoran'}*/}
-          {/*          description={'opis restorana'}*/}
-          {/*          image={Restaurant}>*/}
-          {/*          /!*<Image source={Restaurant} style={{height: 45, width:36 }} />*!/*/}
-          {/*        </Marker>*/}
-          {/*      );*/}
-          {/*    })*/}
-          {/*  : false}*/}
         </MapView>
         <TouchableOpacity
           onPress={async () => {
@@ -181,35 +176,35 @@ class MapScreen extends React.Component {
                 onPress={this.churchesSelected}
                 title={
                   <Text style={{color: 'white', fontSize: 8}}>
-                    <Image style={{width: 8, height: 10}} source={Attraction} />{' '}
-                    Attractions
+                    <Image style={{width: 8, height: 10}} source={Church} />{' '}
+                    Crkve i manastiri
                   </Text>
                 }
                 iconType="font-awesome"
                 size={16}
                 containerStyle={styles.checkBoxContainer}
+              />
+              <CheckBox
+                checked={this.state.isHotelsSelected}
+                onPress={this.hotelsSelected}
+                title={
+                  <Text style={{color: 'white', fontSize: 8}}>
+                    <Image style={{width: 8, height: 10}} source={Hotel} />{' '}
+                    Smeštaj
+                  </Text>
+                }
+                iconType="font-awesome"
+                size={16}
+                containerStyle={styles.checkBoxContainer}
+                textStyle={{color: 'white', fontSize: 8}}
               />
               <CheckBox
                 checked={this.state.isRestaurantsSelected}
                 onPress={this.restaurantsSelected}
                 title={
                   <Text style={{color: 'white', fontSize: 8}}>
-                    <Image style={{width: 8, height: 10}} source={Hotel} />{' '}
-                    Hotels
-                  </Text>
-                }
-                iconType="font-awesome"
-                size={16}
-                containerStyle={styles.checkBoxContainer}
-                textStyle={{color: 'white', fontSize: 8}}
-              />
-              <CheckBox
-                checked={false}
-                // onPress={this.churchesSelected}
-                title={
-                  <Text style={{color: 'white', fontSize: 8}}>
                     <Image style={{width: 8, height: 10}} source={Restaurant} />{' '}
-                    Restaurants
+                    Restorani
                   </Text>
                 }
                 iconType="font-awesome"
@@ -218,12 +213,12 @@ class MapScreen extends React.Component {
                 textStyle={{color: 'white', fontSize: 8}}
               />
               <CheckBox
-                checked={false}
-                // onPress={this.churchesSelected}
+                checked={this.state.isCultureSelected}
+                onPress={this.cultureSelected}
                 title={
                   <Text style={{color: 'white', fontSize: 8}}>
-                    <Image style={{width: 8, height: 10}} source={Feature} />{' '}
-                    Feature
+                    <Image style={{width: 8, height: 10}} source={Book} />{' '}
+                    Kultura
                   </Text>
                 }
                 iconType="font-awesome"
@@ -232,15 +227,12 @@ class MapScreen extends React.Component {
                 textStyle={{color: 'white', fontSize: 8}}
               />
               <CheckBox
-                checked={false}
-                // onPress={this.churchesSelected}
+                checked={this.state.isSportSelected}
+                onPress={this.sportSelected}
                 title={
                   <Text style={{color: 'white', fontSize: 8}}>
-                    <Image
-                      style={{width: 8, height: 10}}
-                      source={Food_Nightlife}
-                    />{' '}
-                    Food Nightlife
+                    <Image style={{width: 8, height: 10}} source={Running} />{' '}
+                    Sport i rekreacija
                   </Text>
                 }
                 iconType="font-awesome"
@@ -249,12 +241,12 @@ class MapScreen extends React.Component {
                 textStyle={{color: 'white', fontSize: 8}}
               />
               <CheckBox
-                checked={false}
-                // onPress={this.churchesSelected}
+                checked={this.state.isParkingSelected}
+                onPress={this.parkingSelected}
                 title={
                   <Text style={{color: 'white', fontSize: 8}}>
-                    <Image style={{width: 8, height: 10}} source={Pin} />{' '}
-                    Uncategorized
+                    <Image style={{width: 8, height: 10}} source={Parking} />{' '}
+                    Parking
                   </Text>
                 }
                 iconType="font-awesome"

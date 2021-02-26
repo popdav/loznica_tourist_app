@@ -322,7 +322,7 @@ export default [
     address:
       'Kralja Aleksandra 13, 15318 Mali Zvornik, Loznica, Centralna Srbija',
     description: 'Hram Vaskrsenja Gospodnjeg',
-    img: require('./img/ЦРКВА-ВАЗНЕСЕЊА-ГОСПОДЊЕГ-231-768x512.jpg'),
+    img: require('./img/ЦРКВА-ВАЗНЕСЕЊА-ГОСПОДЊЕГ-231-768x51244.jpg'),
     phone: '',
   },
   {

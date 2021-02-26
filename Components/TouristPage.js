@@ -1,5 +1,12 @@
 import React from 'react';
-import {Image, Text, View, ScrollView} from 'react-native';
+import {
+  Image,
+  Text,
+  View,
+  ScrollView,
+  TouchableOpacity,
+  Linking,
+} from 'react-native';
 import {Card} from 'react-native-elements';
 
 import MapScreen from './Map';
@@ -12,7 +19,7 @@ class TouristPage extends React.Component {
 
   render() {
     return (
-      <ScrollView style={{marginLeft: '3%', marginRight: '3%'}}>
+      <ScrollView style={{marginLeft: '3%', marginRight: '3%', backgroundColor: 'white'}}>
         <View
           style={{
             flex: 1,
@@ -28,19 +35,27 @@ class TouristPage extends React.Component {
             navigation={this.props.navigation}
             data={[this.props.route.params.object]}
           />
-          {/*<View style={{alignItems:'flex-start', flexDirection:'row', marginBottom: '2%'}}>*/}
-          {/*    <Stars*/}
-          {/*        default={0}*/}
-          {/*        count={5}*/}
-          {/*        half={true}*/}
-          {/*        starSize={16}*/}
-          {/*        disabled={true}*/}
-          {/*        fullStar={<FontAwesomeIcon size={ 20 } style={{color:'#ffd700'}} icon={faStar}/>}*/}
-          {/*        emptyStar={<FontAwesomeIcon size={ 20 } style={{color:'grey'}} icon={faStar}/>}*/}
-          {/*        halfStar={<FontAwesomeIcon size={ 20 } style={{color:'#ffd700'}} icon={faStarHalfAlt}/>}*/}
-          {/*    />*/}
-          {/*    <Text style={{color: '#ff4500'}}> No reviews</Text>*/}
-          {/*</View>*/}
+
+          <TouchableOpacity
+            style={{
+              height: 25,
+              width: 150,
+              margin: 20,
+              backgroundColor: '#1e90ff',
+              borderRadius: 10,
+            }}
+            onPress={() => {
+              Linking.openURL(
+                'http://maps.google.com/maps?daddr=' +
+                  this.props.route.params.object.latitude +
+                  ',' +
+                  this.props.route.params.object.longitude,
+              );
+            }}>
+            <Text style={{color: 'white', marginLeft: 16}}>
+              otvori u mapama
+            </Text>
+          </TouchableOpacity>
 
           <Text style={{textAlign: 'center'}}>
             {this.props.route.params.object.address + '\n\n'}

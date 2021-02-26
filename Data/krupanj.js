@@ -31,7 +31,7 @@ export default [
     address: 'Bela crkva, Krupanj, Loznica, Centralna Srbija',
     description:
       'Crkva Sv. Georgija je po predanju podignuta u XV veku.\nU oltaru i neposrednoj blizini crkve se nalazi žrtvenik i tridesetak stećaka iz Srednjeg veka.\nMuzejski kompleks u Beloj Crkvi (posvećen događajima iz II Svetskog rata) i Spomen zgrada stare škole u kojoj se nalazila bolnica u I Svetskom ratu su objekti pod zaštitom države.\nOba muzeja su zatvorena, postoji potreba za njihovim otvaranjem i obogaćenjem novim postavkama.',
-    img: require('./img/ЦРКВА-СВЕТОГ-ГЕОРГИЈА1-1-768x512.jpg'),
+    img: require('./img/ЦРКВА-СВЕТОГ-ГЕОРГИЈА1-1-768x51255.jpg'),
     phone: '',
   },
   {
@@ -43,7 +43,7 @@ export default [
     address: 'Dobri Potok, Loznica, Centralna Srbija',
     description:
       'Crkva Sv. Uspenija Presvete Bogorodice nalazi se 1 km severno od Krupnja i jedna je od najstarijih crkava u Podrinju. Postanak crkve se vezuje za XII vek i ktitore braću Jugoviće, ali prvi pisani pomen crkve je u XVI veku, 1528 god. u turskim tefterima.\n\nCrkva je smeštena u živopisnom kutku prirode ispod stoletnih stabala lipe koje su zaštićene zakonom. Lepotu crkve ističe drveni krov od suve hrastovine i stare ikone rad ruskih i prekodunavskih majstora. Iznad crkve je zvonara, a ispred crkveni dom. U prizemlju crkvenog doma je trpezarijska sala, a na spratu muzej seoskog i gradskog enterijera iz XIX veka. Porta crkve sa okolinom predstavlja uređen etno-kompleks sa raznovrsnim sadržajima: otkrivene i pokrivene sofrašice za odmor, muzej lova sa životinjskim vrstama iz Rađevine, etno muzej, spomen česma »Braće Jugovića« i spomen ploče znamenitih ljudi ovog kraja. U neposrednoj blizini kompleksa se nalazi i najstarije krupanjsko groblje(oko 500 godina) sa neobičnim nadgrobnim spomenicima izrađenim od sige i krečnjaka.\n\nCrkva je rešenjem Ministarstva kulture proglašena za nepokretno kulturno dobro. Kod dobropotočke crkve održava se tradicionalni vašar za Petrovdan(12. jula) na kojem se održava tradicionalna manifestacija – Nadigravanje za dukat. Kontakt telefon Crkve u Dobrom potoku – sveštenik Aleksandar Đurđev : 015 582 392; 015 581 940',
-    img: require('./img/ЦРКВА-УСПЕЊА-ПРЕС.-БОГОРОДИЦЕ1-768x512.jpg'),
+    img: require('./img/ЦРКВА-УСПЕЊА-ПРЕС.-БОГОРОДИЦЕ1-768x51266.jpg'),
     phone: '',
   },
   {
@@ -55,7 +55,7 @@ export default [
     address: 'Arčibalda Rajsa 11 15314 Krupanj, Loznica, Centralna Srbija',
     description:
       'Sagrađena 1842. godine,a pored nje je sagrađena nova Crkva spomen-kosturnica Sv. Vaznesenja Gospodnjeg koja se nalazi u najužem delu centru Krupnja, delo arhitekte Momira Korunovića – zadužbina Karađorđevića.\n\nGradnja crkve je trajala od 1920 do 1931 god., a reč je o spomeniku podignutom sa ciljem da podseća na tragične i slavne trenutke naše novije istorije. Crkva je sagrađena kao spomen korsturnica »dostojna onih koji će u njoj večno počivati«. U kripti crkve nalaze se 74 lobanje (više nego u Ćele kuli) ratnika palih u bici na Mačkovom kamenu. Crkva je jednokupolna građevina, sažetog, upisanog krsta, neovizantijskog stila, sagrađena od Rađevskog granita. Dveri ikonostasa Stare crkve rad su ruskih majstora iz 19. veka, a freske su delo akademskog slikara Nastasijevića. Godine 1994. sagrađen je zvonik, sa zapadne strane, visine 22m i stilski drugačiji od same crkve.\n\nNedeljom i praznikom vernici mogu da prisustvuju liturgiji i duhovnom pojanju crkvenog hora” Sv.Tri Jerarha”.',
-    img: require('./img/Стара-црква-Св.-Вазнесења-Господњег1-768x512.jpg'),
+    img: require('./img/Стара-црква-Св.-Вазнесења-Господњег1-768x51222.jpg'),
     phone: '',
   },
   {
@@ -216,7 +216,7 @@ export default [
     address: 'Bela Crkva, Krupanj, Loznica, Centralna Srbija',
     description:
       'Je lokalitet na kome se nalazi veliki beli obelisk posvećen vojvodi Rađu (srednjevekovnom vitezu) koji je boravio tu sa svojom vojskom i po kome je cela oblast dobila ime – Rađevina, a nalazi se na oko 3km od Bele Crkve. Blizu tog kamena nalazi se tri bresta i oko njih mnoštvo starih grobova. Narod veruje da niko na sme otkinuti grančicu sa ovih brestova, jer kažu da bi svaki umro ko bi to uradio. Vencem Rađeva polja ima uzvišenih mesta koja se zovu »ante«, »gromile« ili »bobije«, to su grobovi, gde su sahranjivani ljudi u staro vreme.',
-    img: require('./img/РАЂЕВ-КАМЕН-11-1-768x512.jpg'),
+    img: require('./img/РАЂЕВ-КАМЕН-11-1-768x51233.jpg'),
     phone: '',
   },
   {
@@ -228,7 +228,7 @@ export default [
     address: 'Bela crkva, Krupanj, Loznica, Centralna Srbija',
     description:
       'Posvećen događajima iz II Svetskog rata.\nSpomen zgrada stare škole u kojoj se nalazila bolnica u I Svetskom ratu objekti pod zaštitom države.\nOba muzeja su zatrvotena, postoji potreba za njihovim otvaranjem i obogaćenjem novim postavkama.',
-    img: require('./img/Музејски-комплекс-у-Белој-Цркви-768x576.jpg'),
+    img: require('./img/Музејски-комплекс-у-Белој-Цркви-768x57622.jpg'),
     phone: '',
   },
   {
@@ -252,7 +252,7 @@ export default [
     address: 'M.Tita br.6, Krupanj, Loznica, Centralna Srbija',
     description:
       'u Krupnju – objekat pod zaštitom države.\n\nZgrada se nalazi preko puta crkve Sv. Vaznesenja Gospodnjeg. Ona je malih dimenzija, šireg prizemlja sa malim tremom i uzanim spratom, sagrađena je u »nemačkom« stilu (kombinacija opeke i drvenih greda), deluje intimno i toplo i ovom prostoru daje izvesnu patinu.\n\nZgrada je građena od 1899. do 1900. god. kao vila Ace i Pere Despića iz Beča, zakupaca krupanjskih rudnika. Ova zgrada je jedina ostala neoštećena u vreme paljenja Krupnja 21. oktobra 1941. god. koja je tada bila vlasništvo Austrijanca Franca Ciglera.\n\nPo završetku Drugog Svetskog rata zgrada je menjala namenu, bila je apoteka, biblioteka, da bi na kraju ostala stambeni objekat.',
-    img: require('./img/СТАРА-АПОТЕКА1-768x512.jpg'),
+    img: require('./img/СТАРА-АПОТЕКА1-768x51211.jpg'),
     phone: '',
   },
   {
@@ -333,7 +333,7 @@ export default [
     address: 'Krupanj, Loznica, Centralna Srbija',
     description:
       'Planinarski dom „Šarena bukva“ koji je otvorenog tipa sa smeštajnim kapacitetima.',
-    img: require('./img/ШАРЕНА-БУКВА-11-768x512.jpg'),
+    img: require('./img/ШАРЕНА-БУКВА-11-768x51277.jpg'),
     phone: '',
   },
   {
@@ -368,7 +368,7 @@ export default [
     address: 'Krupanj, Loznica, Centralna Srbija',
     description:
       'KONACI “Mala reka”, nalazi se u selu Brštici, opština Krupanj. Ovaj konak je pionir seoskog turizma u Rađevini i za sada je jedini. U sklopu konaka nalazi se ribnjak kalifornijske pastrmke „Marković“. Sam konak je smešten između bistrih potoka i bogate listopadne šume. Čist vazduh, netaknuta priroda i ambijent sigurno će vas preporoditi nakon napornog rada ukoliko dođete kod nas i provedete nekoliko dana. Boravak u toku dana, u večernjim satima,a pogotovu nakon spavanja u našim sobama će vam to i potvrditi.',
-    img: require('./img/КОНАЦИ-МАЛА-РЕКА-768x576.jpg'),
+    img: require('./img/КОНАЦИ-МАЛА-РЕКА-768x576123.jpg'),
     phone: '060/681-5920',
   },
   {
